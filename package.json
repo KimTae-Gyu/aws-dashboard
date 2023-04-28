@@ -1,0 +1,10 @@
+{
+  "type": "commonjs",
+  "scripts": {
+    "start": "node react.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "react": "^18.2.0"
+  }
+}
