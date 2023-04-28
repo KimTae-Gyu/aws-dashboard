@@ -5,10 +5,11 @@
     height: 500px;
     background-color: #B8F3B8;
     color: #fff;
-    transition: all 0.5s ease;
+    transition: all 0.2s ease;
     border-radius: 20px;
     padding: 10px;
     box-sizing: border-box;
+    float:left;
 }
 .menu ul {
     list-style: none;
@@ -100,6 +101,7 @@
     .menu {
         width: 60px;
     }
+    
     .menu label div {
         visibility: hidden;
     }
