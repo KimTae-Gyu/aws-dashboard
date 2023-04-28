@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 사이드바 메뉴</title>
+	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./sidebar.css">
+</head>
+<body>
+<div class="logo">
+    <img src="./logo.png" style="width:200px; height:100px; padding:10px;">
+</div>
+<div class="menu">
+    <label for="expand-menu"><div>메뉴</div></label><input type="checkbox" id="expand-menu" name="expand-menu">
+    <ul>
+        <li><a href="#" class="item"><div>내 정보</div></a> <a href="#" class="item"><div>로그아웃</div></a></li>
+        <li class="item-home"><a href="#"><div>HOME</div></a> 
+            <ul class="item-submenu1">
+                <li><a href="#"><div></div></a></li>
+                <li><a href="#"><div>메인 대시보드</div></a></li>
+            </ul>
+        </li>
+        <li class="item-aws-logs"><a href="#"><div>AWS 보안 로그</div></a>
+            <ul class="item-submenu2">
+                <li><a href="#"><div></div></a></li>
+                <li><a href="#"><div>Network Firewall 로그</div></a></li>
+                <li><a href="#"><div>WAF 로그</div></a></li>
+                <li><a href="#"><div>GuardDuty 로그</div></a></li>
+            </ul>
+        </li>
+        <li class="item-aws-control"><a href="#"><div>AWS 제어 항목</div></a>
+            <ul class="item-submenu3">
+                <li><a href="#"><div></div></a></li>
+                <li><a href="#"><div>Network Firewall 제어</div></a></li>
+            </ul>
+        </li>
+        <li class="item-export"><a href="#"><div>내보내기</div></a></li>
+        <li class="phone"><div><p>관리자 연락처: 02-xxx-xxx</p></div></li>  
+    </ul>
+</div>
+    
+</body>
+</html>
