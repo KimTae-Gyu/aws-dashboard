@@ -1,28 +1,32 @@
 const express = require('express');
+const dotenv = require('dotenv'); // process.env 설정
 const path = require('path');
+const session = require('express-session');
+const passport = require('passport');
+const passportConfig = require('./passport');
+const morgan = require('morgan'); // 서버에 들어온 요청과 응답의 로그를 출력
+const indexRouter = require('./routes/index'); // 라우트 파일 import
+const loginRouter = require('./routes/login');
 
+dotenv.config(); // .env 파일 내용을 process.env에 적재
 const app = express();
-app.use(express.static('./')); // express.static -> CSS, JS 등의 정적 파일 요청을 처리해줌.
 
-app.set('port', process.env.PORT || 3000);
+app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, '.'))); // 정적 파일(html, css) 접근하게 해주는 코드
+app.use(express.urlencoded({ extended: true })); // URL-encoded 데이터를 추출해 req.body에 저장, 없으면 Form을 통해 POST로 보낸 데이터 접근 불가
+app.use(session({
+    secret: process.env.SESSION_SECRET, // # 세션 시크릿 키를 어떻게 할 것인지 생각 .env 파일에 저장해 직접 입력을 피함
+    resave: false,
+    saveUninitialized: false,
+}));
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'sidebar.html'));
-  //const homeData = { message: 'Hello, HomePage!' };
-  //res.json(data);
-});
+passportConfig(); // Passport 로그인 설정 모듈
 
-app.get('/side', (req, res) => {
-  res.sendFile(path.join(__dirname, 'sidebar.html'));
-  //const homeData = { message: 'Hello, HomePage!' };
-  //res.json(data);
-});
+app.use('/', indexRouter); // localhost:3000/ 으로 들어오는 요청을 indexRouter 객체를 이용해 라우팅.
+app.use('/login', loginRouter); // localhost:3000/login 으로 들어오는 요청을 loginRouter로 라우팅.
 
-app.get('/api/data', (req, res) => {
-  const data = { message: 'Hello, api data example' };
-  res.json(data);
-});
-
-app.listen(app.get('port'), () => {
-  console.log('서버 실행');
+app.listen(process.env.PORT || 3000, (req, res) => {
+  process.env.PORT ? console.log(process.env.PORT + '번 포트 서버 실행중') : console.log('3000번 포트 서버 실행 중');
 });
