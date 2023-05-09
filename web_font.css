@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@import "reset.css";
+
+* {
+    font-family: 'Pretendard-Regular';
+    font-weight: 400;
+}
+
+
+
+/* 색상코드 연녹색 C4E8CC
+색상코드 진녹색 59C5A4
+바탕에 쓴 회색 F2F2F2
+선에 쓴 회색 CCCCCC */

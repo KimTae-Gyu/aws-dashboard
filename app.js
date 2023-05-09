@@ -60,6 +60,11 @@ app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'login.html'));
 });
 
+//추가
+app.get('/main', (req, res) => {
+    res.sendFile(path.join(__dirname, 'd2_main.html'));
+});
+
 app.listen(process.env.PORT || 3000, (req, res) => {
   console.log('3000번 포트 서버 실행 중')
 });

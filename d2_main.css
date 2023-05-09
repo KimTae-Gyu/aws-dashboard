@@ -1,0 +1,29 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+}
+
+header{
+    position :fixed;
+    top : 0;
+    left : 0;
+    width : 100%;
+    border-bottom : solid; 
+    background-color: #F2F2F2;
+    border-color : #CCCCCC;
+}
+
+.logo {
+    height : 30px;
+}
+
+.yourPic{
+    height : 30px;
+}
+
+

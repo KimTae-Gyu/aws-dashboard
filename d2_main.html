@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--<script src="D2_main.js" defer></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
+<!--<script src="https://cdn.tailwindcss.com"></script>-->
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="D2_main.css">
+        <link rel="stylesheet" href="Web_font.css">
+        <title>Rookie Dashboard</title>
+    </head>
+    <body>
+        <header>
+            <img src="CROXY_logo.png" alt="Rookie Dashboard homepage" class="logo"> <!--회사의 로고-->
+            <div class="headLine">
+                <img src="person.png" alt="you" class="yourPic"> <!--사람의 사진-->
+                <a class="myinfo" href="D6_myinfo.html" target="_self">내 정보</a>
+                <t>|</t>
+                <a class="logout" href="login.html" target="_self">로그아웃</a>
+            </div>
+        </header>
+        <nav>
+            <span class="menu">
+                <ul>
+                    HOME
+                    <li> 
+                        <a class="mainlog" href="D2_main.html" target="_self">메인 로그</a>
+                    <ul>
+                        <li> <a href="D3_det_1.html" class="page2">세부 사항1</a> </li>
+                        <li> <a href="D3_det_2.html" class="page3">세부 사항2</a> </li>
+                        <li> <a href="D3_det_3.html" class="page4">세부 사항3</a> </li>
+                    </ul>
+                    </li>
+                    <!--<li><a class="livelog" href="livelog.html" target="_self">실시간 로그</a></li>-->
+                </ul>
+                <ul>
+                    AWS 보안 로그
+                    <li> <a class="nfwlog" href="D4_nfwlog.html" target="_self">Network firewall 로그</a> </li>
+                    <li> <a class="waflog" href="D4_waflog.html" target="_self">WAF 로그</a> </li>
+                    <li> <a class="gdlog" href="D4_gdlog.html" target="_self">GuardDuty 로그</a> </li>
+                    <!--<li> <a class="nsglog" href="D4_nsglog.html" target="_self">NACL/SG 로그</a></li>-->
+                </ul>
+                <ul>
+                    AWS 제어 항목
+                    <li> <a class="nfwcon" href="D5_nfwcon.html" target="_self">Network firewall Rule Set</a> </li>
+                </ul>
+                <ul>
+                    기타 항목
+                    <li> <a class="export" href="export.html" target="_self">내보내기</a> </li>
+                </ul>
+                <br>
+                <p class="address"> 관리자 : 02-000-0000 </p>
+            </span>
+        </nav>
+
+        <section>
+            <div class="firstlog1" alt="지표 1-1">
+                <canvas id="firstlog1" style="width:45%;max-width:450px"></canvas>
+            </div>
+            <div class="firstlog2" alt="지표 1-2">
+                <canvas id="firstlog2" style="width:45%;max-width:450px"></canvas>
+            </div>
+            <div class="secondlog" alt="지표 2">
+                <canvas id="secondlog" style="width:45%;max-width:450px"></canvas>
+            </div>
+            <div class="thirdlog" alt="지표 3">
+                <canvas id="thirdlog" style="width:45%;max-width:450px"></canvas>
+            </div>   
+        </section>
+    </body>
+</html>
+
