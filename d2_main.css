@@ -1,11 +1,16 @@
+@import "reset.css";
+
 *{
     box-sizing: border-box;
 }
 html{
     background-color: white;
+}
+
+body{
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 10px;
+    grid-gap: 5%;
 }
 
 header{
@@ -16,14 +21,46 @@ header{
     border-bottom : solid; 
     background-color: #F2F2F2;
     border-color : #CCCCCC;
+    display : grid;
+    grid-column : 1 / span 12;
+    grid-row : 0;
+    padding : 5px;
+
 }
 
 .logo {
+    grid-column : 1 / 1   ;  
+    grid-row : 0;
     height : 30px;
+}
+
+.headLine{
+    grid-column : 12;
+    display : flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-self: end;
 }
 
 .yourPic{
     height : 30px;
+    margin-right : 5px;
 }
 
+.myinfo {
+    margin : 0 5px 0 5px;
+}
+
+nav{
+    position : fixed;
+    left : 0;
+    border : solid; 
+    margin : 30vh 0 0 0;
+    background-color: #F2F2F2;
+    border-color : #CCCCCC;
+    display : grid;
+    grid-column : 1 / span 12;
+    grid-row : 0;
+    padding : 5px;
+}
 
