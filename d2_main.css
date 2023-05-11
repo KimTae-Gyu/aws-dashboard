@@ -1,30 +1,49 @@
-@import "reset.css";
-
+/*전체*/
 *{
     box-sizing: border-box;
 }
 html{
     background-color: white;
+    background-color: #F5F7F7;
 }
 
 body{
+    margin : 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 10px auto;
     grid-gap: 5%;
+    grid-template-areas: 
+        "header header header header header header header header header header header header"
+        "menubar menubar menubar overview overview overview overview overview overview overview side side"
+        "menubar menubar menubar section section section section section section section side side";
 }
 
+/*링크*/
+a{
+    color: black; /* 링크의 기본 색상을 상속 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+a:hover{
+    color: teal;
+}
+
+/*헤더*/
 header{
+    grid-area: header;
     position :fixed;
     top : 0;
     left : 0;
     width : 100%;
     border-bottom : solid; 
-    background-color: #F2F2F2;
+    background-color: #CCCCCC;
     border-color : #CCCCCC;
     display : grid;
     grid-column : 1 / span 12;
     grid-row : 0;
     padding : 5px;
+    margin-bottom: 5%;
 
 }
 
@@ -51,16 +70,213 @@ header{
     margin : 0 5px 0 5px;
 }
 
-nav{
-    position : fixed;
-    left : 0;
-    border : solid; 
-    margin : 30vh 0 0 0;
-    background-color: #F2F2F2;
-    border-color : #CCCCCC;
-    display : grid;
-    grid-column : 1 / span 12;
-    grid-row : 0;
-    padding : 5px;
+.logout {
+    margin : 0 5px 0 5px;
 }
+.alarm {
+    height: 20px;
+    margin-right : 5px;
+}
+
+#notification{
+    border-radius: 100%;
+    border-color : #CCCCCC;
+    background-color: #CCCCCC;
+}
+
+/*사이드*/
+aside{
+    grid-area : side;
+    margin-top : 20px;
+    border : solid;
+    border-color : #59C5A4;
+    background-color: #C4E8CC;
+}
+
+
+
+/*네비게이션 바*/
+nav{
+    grid-area : menubar;
+    display : grid;
+    grid-gap: 10px;
+    grid-template-columns: 3rem 1fr;
+    grid-template-rows: 3rem 0.5fr 0.5fr 0.5fr 0.5fr 0.1fr 0.1fr;
+    grid-template-areas :
+        "menuicon menuname"
+        "mainlog mainlog"
+        "awslog awslog"
+        "control control"
+        "export export"
+        ". ."
+        "address address";
+    position : fixed;
+    left : 0%;
+    top : 10vh;
+    border : solid; 
+    background-color: #C4E8CC;
+    border-color : #59C5A4;
+    border-radius: 0px 35px 35px 0px;
+    padding : 5px 20px 5px 5px;
+
+}
+
+/*메뉴 아이콘 및 정보*/
+#expand-menu{
+    border-radius: 100%;
+    border-color : #59C5A4;
+    background-color : #59C5A4;
+    margin : 5%;
+    width : 2.5rem;
+    height : 2.5rem;
+    grid-area : menuicon;
+}
+
+.menuicon{
+    width : 1.5rem;
+    height : 1.5rem;
+}
+
+.index{
+    font-size : 120%;
+}
+
+label{
+    font-size : 130%;
+    align-self: center;
+    grid-area: menuname;
+}
+
+/*메뉴 항목*/
+#main{
+    grid-area : mainlog;
+}
+
+#aws-log{
+    grid-area : awslog;
+}
+
+#aws-con{
+    grid-area : control;
+}
+
+#aws-exp{
+    grid-area : export;
+}
+
+.address{
+    font-size: 80%;
+    font-style: italic;
+    grid-area: address;
+}
+
+/*섹션1 - 요약(오버뷰)*/
+.overview{
+    grid-area: overview;
+    border : solid;
+    border-color: #59C5A4;
+    margin-top : 20px;
+    padding : 10px;
+    display : flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 400px;
+    background-color: #C4E8CC;
+    place-self: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.log{
+    grid-area: section;
+    margin : 10px;
+    padding : 10px;
+    display : flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 400px;
+    background-color: #C4E8CC;
+    place-self: center;
+    align-content: center;
+    justify-content: center;
+    border : solid;
+    border-color: #59C5A4;
+}
+
+/*섹션2 - 로그(오버뷰2) */
+@media screen and (min-width: 900px){
+    .log{
+        display : grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-gap: 5px;
+        grid-template-areas:
+            "firstlog1 firstlog2"
+            "secondlog thirdlog";
+        border : solid;
+        border-color: #59C5A4;
+    }
+
+    .firstlog1, .firstlog2, .secondlog, .thirdlog {
+        border : solid;
+        border-color: #59C5A4;
+        background-color: white;
+        border-radius: 10%;
+        min-width : 200px;
+        margin: 5px;
+    }
+
+    .firstlog1{
+        grid-area: firstlog1;
+    }
+    .firstlog2{
+        grid-area: firstlog2;
+    }
+    .secondlog{
+        grid-area: secondlog;
+    }
+    .thirdlog{
+        grid-area: thirdlog;
+    }
+
+}
+
+
+@media screen and (max-width: 900px){
+    .log{
+        grid-area : section;
+    }
+
+    .firstlog1, .firstlog2, .secondlog, .thirdlog {
+        border : solid;
+        border-color: #59C5A4;
+        min-width: 350px;
+        max-width : 400px;
+        background-color: white;
+        border-radius: 10%;
+        margin: 5px;
+        display : flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+.firstlog1, .firstlog2, .secondlog, .thirdlog {
+    border : solid;
+    border-color: #59C5A4;
+    background-color: white;
+    border-radius: 10%;
+    margin: 5px;
+}
+
+#overview{
+    color : green;
+}
+
+#firstlog1, #firstlog2, #secondlog, #thirdlog {
+    place-self: center;
+}
+
+
 

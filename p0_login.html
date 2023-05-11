@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--<script src="d1_login.js" defer></script>-->
+<html class="bg-white" lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="web_font.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <title>Lookey Company Dashboard</title>
+    </head>
+    <center>
+    <body>
+        <img src="./pic/CROXY_logo.png" alt="Lookey Dashboard Homepage" class="mt-[10px] ml-auto mr-auto w-3/10 or w-[30%] max-w-[200px] select-none"> <!--추후 이미지 변경-->
+        <div class="py-[5%] px-[auto] text-center text-[100%] text-black bg-[#C4E8CC] mt-[10px] mb-[5%] min-w-[350px] min-h-[400px] max-w-[500px] max-h-[600px] align-middle rounded-[50px] select-none"> <!--이미지 변경하면 필요 없을 수도?? 굳이 안써도 될듯-->
+            <form action="/login" target="_self" method="post" autocomplete="off">
+                <div class="flex flex-wrap justify-center p-[5%] pt-[20%]">
+                    <label class="justify-start text-[160%] pr-[5%]" for="id">ID</label>
+                        <input type="text" id="id" name="id" placeholder="Enter your ID" required class="w-[200px] h-[25px] box-border rounded-[5px] border-[#CCCCCC] focus:bg-[#F2F2F2]">
+                </div>
+                <div id="pw_box" class="flex flex-wrap justify-center px-[5%] pt-[0%] pb-[10%]">
+                    <lable class="justify-start text-[160%] pr-[5%]" for="password">PW</lable>
+                        <input type="password" id="password" name="password" placeholder="Enter your Password" required class="w-[185px] h-[25px] box-border rounded-[5px] border-[#CCCCCC] focus:bg-[F2F2F2]">
+                </div>
+                <button type="submit" class="w-[40%] h-[30px] box-border rounded-[5px] bg-[#59C5A4] border-[#59C5A4] active:bg-[#5BB298]">login</button>
+            </form>
+            <p class="pt-[5%] pb-[10%] mb-[5%] text-center italic"> 관리자 : 02-000-0000 </p>
+        </div>
+    </body>
+    </center>
+</html>
