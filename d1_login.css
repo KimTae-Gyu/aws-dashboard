@@ -87,6 +87,7 @@ button[type="submit"]{
 
 button[type="submit"]:focus{
     background-color:#5BB298;
+    border-color : #5BB298;
 }
 
 p{

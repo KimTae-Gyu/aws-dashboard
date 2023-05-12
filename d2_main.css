@@ -11,12 +11,13 @@ body{
     margin : 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 10px auto;
-    grid-gap: 5%;
+    grid-template-rows: 10px 220px 420px 620px;
+    grid-gap: 10px;
     grid-template-areas: 
         "header header header header header header header header header header header header"
-        "menubar menubar menubar overview overview overview overview overview overview overview side side"
-        "menubar menubar menubar section section section section section section section side side";
+        "menubar menubar overview overview overview overview overview overview overview overview overview ."
+        "menubar menubar section section section section section section section section section ."
+        "menubar menubar side side side side side side side side side .";
 }
 
 /*링크*/
@@ -43,7 +44,7 @@ header{
     grid-column : 1 / span 12;
     grid-row : 0;
     padding : 5px;
-    margin-bottom: 5%;
+    margin-bottom: 10px;
 
 }
 
@@ -74,27 +75,27 @@ header{
     margin : 0 5px 0 5px;
 }
 .alarm {
-    height: 20px;
+    height: 100px;
     margin-right : 5px;
 }
 
-#notification{
+/* #alarm-button{
     border-radius: 100%;
     border-color : #CCCCCC;
     background-color: #CCCCCC;
-}
+}*/
 
 /*사이드*/
 aside{
     grid-area : side;
-    margin-top : 20px;
     border : solid;
     border-color : #59C5A4;
     background-color: #C4E8CC;
+    margin-top : 50px;
+    padding : 20px 300px 20px 300px;
 }
 
-
-
+/*네비게이션 바 위치*/
 /*네비게이션 바*/
 nav{
     grid-area : menubar;
@@ -110,15 +111,31 @@ nav{
         "export export"
         ". ."
         "address address";
-    position : fixed;
-    left : 0%;
-    top : 10vh;
+    left : 0;
     border : solid; 
     background-color: #C4E8CC;
     border-color : #59C5A4;
-    border-radius: 0px 35px 35px 0px;
+    margin-top: 50px;
     padding : 5px 20px 5px 5px;
+}
 
+li{
+    list-style-type: none;
+    font-size : 20px;
+    margin-left : 5px;
+    padding-left : 10px;
+    border-left : 5px solid gray;
+    margin-bottom : 15px;
+    align-self: center;
+}
+
+li:hover{
+    list-style-type: none;
+    font-size : 20px;
+    margin-left : 5px;
+    padding-left : 10px;
+    border-left : 5px solid white;
+    margin-bottom : 15px;
 }
 
 /*메뉴 아이콘 및 정보*/
@@ -126,25 +143,37 @@ nav{
     border-radius: 100%;
     border-color : #59C5A4;
     background-color : #59C5A4;
-    margin : 5%;
-    width : 2.5rem;
-    height : 2.5rem;
+    margin : 5px;
+    width : 45px;
+    height : 45px;
     grid-area : menuicon;
 }
 
 .menuicon{
-    width : 1.5rem;
-    height : 1.5rem;
+    width : 30px;
+    height : 30px;
 }
 
 .index{
-    font-size : 120%;
+    font-size : 25px;
+    border-color : black;
+    padding-left : 5px;
+    padding-bottom : 5px;
+}
+
+#main .index{
+    font-weight : 600;
+}
+
+.mainlog{
+    font-weight : 600;
 }
 
 label{
-    font-size : 130%;
-    align-self: center;
     grid-area: menuname;
+    padding-top : 5px;
+    align-self: center;
+    font-weight: 900;
 }
 
 /*메뉴 항목*/
@@ -165,36 +194,45 @@ label{
 }
 
 .address{
-    font-size: 80%;
+    padding-left : 20px;
+    font-size: 15px;
     font-style: italic;
     grid-area: address;
 }
+
 
 /*섹션1 - 요약(오버뷰)*/
 .overview{
     grid-area: overview;
     border : solid;
     border-color: #59C5A4;
-    margin-top : 20px;
-    padding : 10px;
+    padding : auto;
     display : flex;
     flex-wrap: wrap;
     width: 100%;
-    min-width: 400px;
     background-color: #C4E8CC;
     place-self: center;
     align-content: center;
     justify-content: center;
 }
 
+#now-state{
+    border : solid;
+    padding : 40px 315px 40px 315px; 
+    margin : 5px;
+}
+
+#alarm-num{
+    border : solid;
+    padding : 40px 315px 40px 315px;
+    margin : 5px;
+}
+
+/*섹션2 - 로그(오버뷰2) */
 .log{
     grid-area: section;
-    margin : 10px;
-    padding : 10px;
     display : flex;
     flex-wrap: wrap;
-    width: 100%;
-    min-width: 400px;
     background-color: #C4E8CC;
     place-self: center;
     align-content: center;
@@ -203,7 +241,6 @@ label{
     border-color: #59C5A4;
 }
 
-/*섹션2 - 로그(오버뷰2) */
 @media screen and (min-width: 900px){
     .log{
         display : grid;
@@ -221,9 +258,7 @@ label{
         border : solid;
         border-color: #59C5A4;
         background-color: white;
-        border-radius: 10%;
-        min-width : 200px;
-        margin: 5px;
+        padding: 100px 300px 100px 300px
     }
 
     .firstlog1{
@@ -253,7 +288,6 @@ label{
         min-width: 350px;
         max-width : 400px;
         background-color: white;
-        border-radius: 10%;
         margin: 5px;
         display : flex;
         justify-content: center;
@@ -266,7 +300,6 @@ label{
     border : solid;
     border-color: #59C5A4;
     background-color: white;
-    border-radius: 10%;
     margin: 5px;
 }
 
