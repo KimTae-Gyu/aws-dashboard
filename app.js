@@ -5,13 +5,34 @@ const session = require('express-session');
 const passport = require('passport');
 const passportConfig = require('./passport');
 const morgan = require('morgan'); // 서버에 들어온 요청과 응답의 로그를 출력
-const indexRouter = require('./routes/index'); // 라우트 파일 import
-const loginRouter = require('./routes/login');
+const mysql = require('mysql');
 
 dotenv.config(); // .env 파일 내용을 process.env에 적재
 const app = express();
 
-app.use(morgan('dev'));
+// 템플릿 엔진(EJS) 설정
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+// MySQL 설정 및 연결
+const connection = mysql.createConnection({
+  host: process.env.DB_HOST,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
+});
+
+// 여기에 위치해야 하는지 로그인 passport 인증 준비 단계에서 연결해야 하는지?
+connection.connect((err) => {
+  if (err) throw err;
+  console.log('MySQL 연결 성공');
+});
+
+const indexRouter = require('./routes/index'); // 라우트 파일 import
+const loginRouter = require('./routes/login');
+
+// 미들 웨어 영역, 미들웨어 순서 생각
+app.use(morgan('dev')); // 배포 시에는 'dev'대신 'combined'를 사용하는 것이 일반적.
 app.use(express.static(path.join(__dirname, '.'))); // 정적 파일(html, css) 접근하게 해주는 코드
 app.use(express.urlencoded({ extended: true })); // URL-encoded 데이터를 추출해 req.body에 저장, 없으면 Form을 통해 POST로 보낸 데이터 접근 불가
 app.use(session({
@@ -22,7 +43,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-passportConfig(); // Passport 로그인 설정 모듈
+passportConfig(connection); // Passport 로그인 설정 모듈
 
 app.use('/', indexRouter); // localhost:3000/ 으로 들어오는 요청을 indexRouter 객체를 이용해 라우팅.
 app.use('/login', loginRouter); // localhost:3000/login 으로 들어오는 요청을 loginRouter로 라우팅.

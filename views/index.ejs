@@ -4,19 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CroxyWatch</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        html, body {
-            height: 100%;
-        }
+        html, body { height: 100%; }
     </style>
 </head>
-<body class="flex flex-col h-full">
-    <header class="flex justify-center items-center border-2 h-16">
-        <a href="/" class="absolute top-0 left-0 m-4">Logo</a>
-    </header>
-    <div class="flex flex-1 justify-center items-center border-2">
+<body>
+    <!-- Header Wrapper, 로고를 사이드 메뉴 위에 위치시키기 위함-->
+    <div class="flex justify-center">
+        <!-- Header -->
+        <header class="flex-initial flex items-center border-2 w-9/12 h-16 px-4">
+            <a href="/" class="">Logo</a>
+            <div class="ml-auto">
+                <% if (loggedIn) { %>
+                    <a href="/logout"><button class="rounded bg-[#addfad] text-gray-100 font-semibold px-4 py-2">로그 아웃</button></a>
+                    <button class="rounded bg-[#86efac] text-gray-100 font-semibold px-4 py-2">내 정보</button>
+                <% } else { %>
+                    <a href="/login"><button class="rounded bg-[#addfad] text-gray-100 font-semibold px-4 py-2">로그인</button></a>
+                <% } %>
+            </div>    
+        </header>
+    </div>
+    <!-- Nav, Section Wrapper, flex로 나열 및 페이지의 가운데 정렬-->
+    <div class="flex border-2 justify-center">
+        <!-- Nav, 사이드 메뉴 -->
         <nav class="flex-initial border-2 h-full w-fit">
             <ul>
                 <li class="mb-3">
@@ -50,6 +62,7 @@
                 </li>
             </ul>
         </nav>
+        <!-- Section, 버튼과 차트 -->
         <section class="flex-initial border-4 h-8/12 w-8/12 p-6">
             <div class="flex gap-4 mb-4">
                 <button class="rounded bg-[#addfad] text-gray-100 font-semibold px-4 py-2">종합 대시보드</button>
