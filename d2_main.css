@@ -4,7 +4,6 @@
 }
 html{
     background-color: white;
-    background-color: #F5F7F7;
 }
 
 body{
@@ -38,8 +37,8 @@ header{
     left : 0;
     width : 100%;
     border-bottom : solid; 
-    background-color: #CCCCCC;
-    border-color : #CCCCCC;
+    background-color: #FFFFFF;
+    border-color : #000000;
     display : grid;
     grid-column : 1 / span 12;
     grid-row : 0;
@@ -89,8 +88,8 @@ header{
 aside{
     grid-area : side;
     border : solid;
-    border-color : #59C5A4;
-    background-color: #C4E8CC;
+    border-color : #000000;
+    background-color: #FFFFFF;
     margin-top : 50px;
     padding : 20px 300px 20px 300px;
 }
@@ -113,8 +112,8 @@ nav{
         "address address";
     left : 0;
     border : solid; 
-    background-color: #C4E8CC;
-    border-color : #59C5A4;
+    background-color: #FFFFFF;
+    border-color : #000000;
     margin-top: 50px;
     padding : 5px 20px 5px 5px;
 }
@@ -124,7 +123,7 @@ li{
     font-size : 20px;
     margin-left : 5px;
     padding-left : 10px;
-    border-left : 5px solid gray;
+    border-left : 5px solid black;
     margin-bottom : 15px;
     align-self: center;
 }
@@ -134,15 +133,15 @@ li:hover{
     font-size : 20px;
     margin-left : 5px;
     padding-left : 10px;
-    border-left : 5px solid white;
+    border-left : 5px solid gray;
     margin-bottom : 15px;
 }
 
 /*메뉴 아이콘 및 정보*/
 #expand-menu{
     border-radius: 100%;
-    border-color : #59C5A4;
-    background-color : #59C5A4;
+    border-color : #000000;
+    background-color : #FFFFFF;
     margin : 5px;
     width : 45px;
     height : 45px;
@@ -205,12 +204,12 @@ label{
 .overview{
     grid-area: overview;
     border : solid;
-    border-color: #59C5A4;
+    border-color: #000000;
     padding : auto;
     display : flex;
     flex-wrap: wrap;
     width: 100%;
-    background-color: #C4E8CC;
+    background-color: #FFFFFF;
     place-self: center;
     align-content: center;
     justify-content: center;
@@ -233,12 +232,12 @@ label{
     grid-area: section;
     display : flex;
     flex-wrap: wrap;
-    background-color: #C4E8CC;
+    background-color: #FFFFFF;
     place-self: center;
     align-content: center;
     justify-content: center;
     border : solid;
-    border-color: #59C5A4;
+    border-color: #000000;
 }
 
 @media screen and (min-width: 900px){
@@ -251,12 +250,12 @@ label{
             "firstlog1 firstlog2"
             "secondlog thirdlog";
         border : solid;
-        border-color: #59C5A4;
+        border-color: #000000;
     }
 
     .firstlog1, .firstlog2, .secondlog, .thirdlog {
         border : solid;
-        border-color: #59C5A4;
+        border-color: #000000;
         background-color: white;
         padding: 100px 300px 100px 300px
     }
@@ -284,7 +283,7 @@ label{
 
     .firstlog1, .firstlog2, .secondlog, .thirdlog {
         border : solid;
-        border-color: #59C5A4;
+        border-color: #000000;
         min-width: 350px;
         max-width : 400px;
         background-color: white;
@@ -298,13 +297,13 @@ label{
 
 .firstlog1, .firstlog2, .secondlog, .thirdlog {
     border : solid;
-    border-color: #59C5A4;
+    border-color: #000000;
     background-color: white;
     margin: 5px;
 }
 
 #overview{
-    color : green;
+    color : black;
 }
 
 #firstlog1, #firstlog2, #secondlog, #thirdlog {
