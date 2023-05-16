@@ -12,10 +12,16 @@
 
 :root {
     --black: #333333;
+    --light-black:#666666;
     --blue:#0072C6;
     --gray:#F2F2F2;
+    --deep-gray:#CCCCCC;
+    --light-gray:#FAFAFA;
     --green:#00A300;
     --red:#FF4343;
+    --white: #FDFDFD;
+    --deep-green:#59C5A4;
+    --light-green:#daf7eb;
   }
 
 /* 색상코드 연녹색 C4E8CC

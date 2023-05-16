@@ -3,18 +3,18 @@
     box-sizing: border-box;
 }
 html{
-    background-color: white;
+    background-color: var(--light-gray);
 }
 
 body{
     margin : 0;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: 200px 5% 10fr;
     grid-template-rows: 40px 1fr;
     grid-gap: 10px;
     grid-template-areas: 
-        "header header header header header header header header header header header header"
-        "menubar menubar section section section section section section section section section ."
+        "header header header"
+        "menubar menubar section";
 }
 
 /*링크*/
@@ -24,7 +24,8 @@ a{
 }
 
 a:hover{
-    color: green;
+    color: var(--blue);
+    font-style : italic;
 }
 
 /*헤더*/
@@ -34,9 +35,9 @@ header{
     top : 0;
     left : 0;
     width : 100%;
-    border-bottom : solid; 
-    background-color: #FFFFFF;
-    border-color : var(--black);
+    border-bottom : solid 2px; 
+    background-color: var(--deep-green);
+    border-color : var(--deep-green);
     display : grid;
     grid-column : 1 / span 12;
     grid-row : 0;
@@ -62,6 +63,10 @@ header{
 .yourPic{
     height : 30px;
     margin-right : 5px;
+}
+
+.myinfo:hover,.logout:hover {
+    color : var(--light-green);
 }
 
 .myinfo {
@@ -93,16 +98,16 @@ nav{
     grid-template-columns: 3rem 1fr;
     grid-template-rows: 3rem 1fr 0.8fr 0.5fr 0.5fr 0.5fr;
     grid-template-areas :
-        "menuicon menuname"
+        "menuname menuname"
         "mainlog mainlog"
         "awslog awslog"
         "control control"
         "export export"
         "address address";
     left : 0;
-    border : solid; 
-    background-color: #FFFFFF;
-    border-color : var(--black);
+    border : solid 2px;
+    background-color: var(--gray);
+    border-color : var(--gray);
     margin-top: 0px;
     padding : 5px 20px 0px 5px;
 }
@@ -122,22 +127,22 @@ li:hover{
     font-size : 20px;
     margin-left : 5px;
     padding-left : 10px;
-    border-left : 5px solid var(--green);
+    border-left : 5px solid var(--blue);
     margin-bottom : 15px;
 }
 
 /*메뉴 아이콘 및 정보*/
 #expand-menu{
-    background-color : #FFFFFF;
+    background-color : var(--white);
     grid-area : menuicon;
     align-self: center;
 }
-
-.menuicon{
+/*
+ .menuicon{
     margin : 5px;
     width : 45px;
     height : 45px;
-}
+}*/
 
 .index{
     font-size : 25px;
@@ -152,11 +157,13 @@ li:hover{
 
 .mainlog{
     font-weight : 600;
+    color:var(--blue);
 }
 
 label{
     grid-area: menuname;
     padding-top : 5px;
+    margin-left : 10px;
     align-self: center;
     font-weight: 900;
 }
@@ -191,49 +198,62 @@ section{
     flex-wrap: wrap;
     gap : 5px;
     flex-direction: column;
+    overflow : scroll;
+    margin-right : 10px;
+/*    
+    border : solid 2px;
+    border-color : var(--gray);
+    */
 }
 
 /*섹션1 - 요약(오버뷰)*/
 .overview{
-    border : solid;
-    border-color: var(--black);
     padding : auto;
     display : flex;
     flex-direction: row;
     flex-wrap: wrap;
+    border : solid 2px;
+    border-color : var(--gray);
+    background-color : var(--gray)
 }
 
 #now-state{
     border : solid;
+    border-color : var(--white);
     margin : 5px;
+    background-color: var(--white);
+    min-width: 500px;
 }
 
 #alarm-num{
     border : solid;
+    border-color : var(--white);
     margin : 5px;
+    background-color: var(--white);
+    min-width: 500px;
 }
 
 /*섹션2 - 로그(오버뷰2) */
-.log{
-    background-color: #FFFFFF;
-}
 
 .log{
     display : grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /*grid-template-rows: 1fr 1fr;*/
     grid-gap: 5px;
-    grid-template-areas:
+    grid-template-areas: "firstlog1 firstlog2 secondlog thirdlog";
+    border : solid 2px;
+    border-color : var(--gray);
+    background-color: var(--gray);
+    /*grid-template-areas:
         "firstlog1 firstlog2"
-        "secondlog thirdlog";
-    border : solid;
-    border-color: var(--black);
+        "secondlog thirdlog";*/
 }
 .firstlog1, .firstlog2, .secondlog, .thirdlog {
     margin : 5px;
     border : solid;
-    border-color: var(--black);
-    background-color: white;
+    border-color: var(--white);
+    background-color: var(--white);
+    min-width : 250px;
 }
 .firstlog1{
     grid-area: firstlog1;
@@ -250,8 +270,8 @@ section{
 /*사이드*/
 #alarm-list{
     grid-area : side;
-    border : solid;
-    border-color : var(--black);
-    background-color: #FFFFFF;
+    border : solid 2px;
+    border-color : var(--gray);
+    background-color: var(--gray);
 }
 
