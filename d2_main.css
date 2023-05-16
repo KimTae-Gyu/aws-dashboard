@@ -10,23 +10,21 @@ body{
     margin : 0;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 10px 220px 420px 620px;
+    grid-template-rows: 40px 1fr;
     grid-gap: 10px;
     grid-template-areas: 
         "header header header header header header header header header header header header"
-        "menubar menubar overview overview overview overview overview overview overview overview overview ."
         "menubar menubar section section section section section section section section section ."
-        "menubar menubar side side side side side side side side side .";
 }
 
 /*링크*/
 a{
-    color: black; /* 링크의 기본 색상을 상속 */
+    color: var(--black); /* 링크의 기본 색상을 상속 */
     text-decoration: none; /* 밑줄 제거 */
 }
 
 a:hover{
-    color: teal;
+    color: green;
 }
 
 /*헤더*/
@@ -38,12 +36,12 @@ header{
     width : 100%;
     border-bottom : solid; 
     background-color: #FFFFFF;
-    border-color : #000000;
+    border-color : var(--black);
     display : grid;
     grid-column : 1 / span 12;
     grid-row : 0;
     padding : 5px;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
 
 }
 
@@ -84,38 +82,29 @@ header{
     background-color: #CCCCCC;
 }*/
 
-/*사이드*/
-aside{
-    grid-area : side;
-    border : solid;
-    border-color : #000000;
-    background-color: #FFFFFF;
-    margin-top : 50px;
-    padding : 20px 300px 20px 300px;
-}
+
 
 /*네비게이션 바 위치*/
 /*네비게이션 바*/
 nav{
     grid-area : menubar;
     display : grid;
-    grid-gap: 10px;
+    grid-gap: 5px;
     grid-template-columns: 3rem 1fr;
-    grid-template-rows: 3rem 0.5fr 0.5fr 0.5fr 0.5fr 0.1fr 0.1fr;
+    grid-template-rows: 3rem 1fr 0.8fr 0.5fr 0.5fr 0.5fr;
     grid-template-areas :
         "menuicon menuname"
         "mainlog mainlog"
         "awslog awslog"
         "control control"
         "export export"
-        ". ."
         "address address";
     left : 0;
     border : solid; 
     background-color: #FFFFFF;
-    border-color : #000000;
-    margin-top: 50px;
-    padding : 5px 20px 5px 5px;
+    border-color : var(--black);
+    margin-top: 0px;
+    padding : 5px 20px 0px 5px;
 }
 
 li{
@@ -123,7 +112,7 @@ li{
     font-size : 20px;
     margin-left : 5px;
     padding-left : 10px;
-    border-left : 5px solid black;
+    border-left : 5px solid var(--black);
     margin-bottom : 15px;
     align-self: center;
 }
@@ -133,29 +122,26 @@ li:hover{
     font-size : 20px;
     margin-left : 5px;
     padding-left : 10px;
-    border-left : 5px solid gray;
+    border-left : 5px solid var(--green);
     margin-bottom : 15px;
 }
 
 /*메뉴 아이콘 및 정보*/
 #expand-menu{
-    border-radius: 100%;
-    border-color : #000000;
     background-color : #FFFFFF;
-    margin : 5px;
-    width : 45px;
-    height : 45px;
     grid-area : menuicon;
+    align-self: center;
 }
 
 .menuicon{
-    width : 30px;
-    height : 30px;
+    margin : 5px;
+    width : 45px;
+    height : 45px;
 }
 
 .index{
     font-size : 25px;
-    border-color : black;
+    border-color : var(--black);
     padding-left : 5px;
     padding-bottom : 5px;
 }
@@ -198,117 +184,74 @@ label{
     font-style: italic;
     grid-area: address;
 }
-
+/* 전체 섹션 */
+section{
+    grid-area : section;
+    display : flex;
+    flex-wrap: wrap;
+    gap : 5px;
+    flex-direction: column;
+}
 
 /*섹션1 - 요약(오버뷰)*/
 .overview{
-    grid-area: overview;
     border : solid;
-    border-color: #000000;
+    border-color: var(--black);
     padding : auto;
     display : flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
-    background-color: #FFFFFF;
-    place-self: center;
-    align-content: center;
-    justify-content: center;
 }
 
 #now-state{
     border : solid;
-    padding : 40px 315px 40px 315px; 
     margin : 5px;
 }
 
 #alarm-num{
     border : solid;
-    padding : 40px 315px 40px 315px;
     margin : 5px;
 }
 
 /*섹션2 - 로그(오버뷰2) */
 .log{
-    grid-area: section;
-    display : flex;
-    flex-wrap: wrap;
     background-color: #FFFFFF;
-    place-self: center;
-    align-content: center;
-    justify-content: center;
+}
+
+.log{
+    display : grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+    grid-template-areas:
+        "firstlog1 firstlog2"
+        "secondlog thirdlog";
     border : solid;
-    border-color: #000000;
+    border-color: var(--black);
 }
-
-@media screen and (min-width: 900px){
-    .log{
-        display : grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-gap: 5px;
-        grid-template-areas:
-            "firstlog1 firstlog2"
-            "secondlog thirdlog";
-        border : solid;
-        border-color: #000000;
-    }
-
-    .firstlog1, .firstlog2, .secondlog, .thirdlog {
-        border : solid;
-        border-color: #000000;
-        background-color: white;
-        padding: 100px 300px 100px 300px
-    }
-
-    .firstlog1{
-        grid-area: firstlog1;
-    }
-    .firstlog2{
-        grid-area: firstlog2;
-    }
-    .secondlog{
-        grid-area: secondlog;
-    }
-    .thirdlog{
-        grid-area: thirdlog;
-    }
-
-}
-
-
-@media screen and (max-width: 900px){
-    .log{
-        grid-area : section;
-    }
-
-    .firstlog1, .firstlog2, .secondlog, .thirdlog {
-        border : solid;
-        border-color: #000000;
-        min-width: 350px;
-        max-width : 400px;
-        background-color: white;
-        margin: 5px;
-        display : flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-}
-
 .firstlog1, .firstlog2, .secondlog, .thirdlog {
+    margin : 5px;
     border : solid;
-    border-color: #000000;
+    border-color: var(--black);
     background-color: white;
-    margin: 5px;
 }
-
-#overview{
-    color : black;
+.firstlog1{
+    grid-area: firstlog1;
 }
-
-#firstlog1, #firstlog2, #secondlog, #thirdlog {
-    place-self: center;
+.firstlog2{
+    grid-area: firstlog2;
 }
-
-
+.secondlog{
+    grid-area: secondlog;
+}
+.thirdlog{
+    grid-area: thirdlog;
+}
+/*사이드*/
+#alarm-list{
+    grid-area : side;
+    border : solid;
+    border-color : var(--black);
+    background-color: #FFFFFF;
+}
 

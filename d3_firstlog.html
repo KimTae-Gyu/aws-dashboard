@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--<script src="https://cdn.tailwindcss.com"></script>-->
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="d2_main.css">
+        <link rel="stylesheet" href="web_font.css">
+        <title>Lookey Dashboard</title>
+    </head>
+    <body>
+        <header>
+            <img src="./pic/Lookey_logo.png" alt="Lookey Dashboard homepage" class="logo"> <!--회사의 로고-->
+            <div class="headLine">
+                <img src="./pic/person.png" alt="your Picture" class="yourPic"> <!--사람의 사진-->
+                <a class="myinfo" href="D6_myinfo.html" target="_self">내 정보</a>
+                <t>|</t>
+                <a class="logout" href="d1_login.html" target="_self">로그아웃</a>
+                <!--<img src="alarm.png" alt="alarm icon" class="alarm-icon">-->
+                <!--<a class="alarm" href="d7_alarm.html>알람</a>-->
+                <!--<button type="button" id="alarm-button" name="alarm">
+                    <img src="./pic/notification.svg" alt="alarm" class="alarm"> 알람 버튼
+                </button>-->
+            </div>
+        </header>
+        
+        <!--기존 nav자리-->
+        <nav>
+            <div id="expand-menu" name="expand-menu" class="expand-menu">
+                <img src="./pic/menu.svg" alt="menu icon" class="menuicon">
+            </div>
+            <label for="expand-menu" class="index">메뉴</label>
+            <ul id="main">
+                <div class="index">Main</div> <!--볼드 처리-->
+                <li> <a class="mainlog" href="d2_main.html" target="_self">메인 로그</a></li> <!--볼드 처리-->
+                <li> <a href="d3_det_1.html" class="det-1">세부 사항1</a> </li>
+                <li> <a href="d3_det_2.html" class="det-2">세부 사항2</a> </li>
+                <li> <a href="d3_det_3.html" class="det-3">세부 사항3</a> </li>
+                <!--<li><a class="livelog" href="livelog.html" target="_self">실시간 로그</a></li>-->
+            </ul>
+            <ul id="aws-log">
+                <div class="index">AWS 보안 로그</div>
+                <li> <a class="nfwlog" href="d4_nfwlog.html" target="_self">Network firewall 로그</a> </li>
+                <li> <a class="waflog" href="d4_waflog.html" target="_self">WAF 로그</a> </li>
+                <li> <a class="gdlog" href="d4_gdlog.html" target="_self">GuardDuty 로그</a> </li>
+                <!--<li> <a class="nsglog" href="D4_nsglog.html" target="_self">NACL/SG 로그</a></li>-->
+            </ul>
+            <ul id="aws-con">
+                <div class="index">AWS 제어 항목</div>
+                <li> <a class="nfwcon" href="d5_nfwcon.html" target="_self">Network firewall Rule Set</a> </li>
+            </ul>
+            <ul id="aws-exp">
+                <div class="index">기타 항목</div>
+                <li> <a class="export" href="export.html" target="_self">내보내기</a> </li>
+            </ul>
+            <p class="address"> 관리자 : 02-000-0000 </p>
+        </nav>
+        
+        <script src="menu.js"></script>
+
+<section>
+        <div class="overview">
+            <div id="now-state">
+                <span class="text">현재 상태</span>
+                <span class="important">
+                    <script src="./js/firstlog.js"> </script>
+                </span>
+            </div>
+            <div id="alarm-num">
+                <span class="text">주요 알람</span>
+                <span class="important">
+                    <script src="./js/alarm.js"> </script>
+                </span>
+            </div>
+        </div>
+        <div class="log">
+            <a href="d3_firstlog.html" class="firstlog1" alt="지표 1-1">
+                <span class ="text">종합 상태</span>
+                <span class ="grade">
+                    <script src="./js/firstlog.js"> </script>
+                </span>
+                <span class ="text">전일 대비</span>
+                <span class ="compare">
+                    <script src="./js/firstlog.js"> </script>
+                </span>
+            </a>
+            <a href="d3_firstlog.html" class="firstlog2" alt="지표 1-2">
+                <span class ="text">보완 항목</span>
+                <span class ="comp-list">
+                    <script src="./js/firstlog.js"> </script>
+                </span>
+            </a>
+            <a href="d3_secondlog.html" class="secondlog" alt="지표 2">
+                <span class="text">차단 개수</span>
+                <span class="grade">
+                    <script src="./js/secondlog.js"> </script>
+                </span>
+                <span class ="text">전일 대비</span>
+                <span class ="compare">
+                    <script src="./js/secondlog.js"> </script>
+                </span>
+            </a>
+            <a href="d3_thirdlog.html" class="thirdlog" alt="지표 3">
+                <div use-ruleset>차단에 사용된 룰셋 작성
+                    <script src="./js/thirdlog.js"> </script>
+                </div>
+            </a>
+        </div>
+        <div id="alarm-list">
+            <div id="side">
+                알람 리스트 작성 <!--알람 리스트 작성-->
+            </div>
+        </div>
+    </body>
+</html>

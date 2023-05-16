@@ -16,7 +16,7 @@
                 <img src="./pic/person.png" alt="your Picture" class="yourPic"> <!--사람의 사진-->
                 <a class="myinfo" href="D6_myinfo.html" target="_self">내 정보</a>
                 <t>|</t>
-                <a class="logout" href="login.html" target="_self">로그아웃</a>
+                <a class="logout" href="d1_login.html" target="_self">로그아웃</a>
                 <!--<img src="alarm.png" alt="alarm icon" class="alarm-icon">-->
                 <!--<a class="alarm" href="d7_alarm.html>알람</a>-->
                 <!--<button type="button" id="alarm-button" name="alarm">
@@ -24,17 +24,12 @@
                 </button>-->
             </div>
         </header>
-        <aside>
-            <div id="side">
-                알람 리스트 작성 <!--알람 리스트 작성-->
-            </div>
-        </aside>
         
         <!--기존 nav자리-->
         <nav>
-            <button type="button" id="expand-menu" name="expand-menu" class="expand-menu">
+            <div id="expand-menu" name="expand-menu" class="expand-menu">
                 <img src="./pic/menu.svg" alt="menu icon" class="menuicon">
-            </button>
+            </div>
             <label for="expand-menu" class="index">메뉴</label>
             <ul id="main">
                 <div class="index">Main</div> <!--볼드 처리-->
@@ -60,12 +55,12 @@
                 <li> <a class="export" href="export.html" target="_self">내보내기</a> </li>
             </ul>
             <p class="address"> 관리자 : 02-000-0000 </p>
-            <br>
         </nav>
         
         <script src="menu.js"></script>
 
-        <section class="overview">
+<section>
+        <div class="overview">
             <div id="now-state">
                 <span class="text">현재 상태</span>
                 <span class="important">
@@ -78,8 +73,8 @@
                     <script src="./js/alarm.js"> </script>
                 </span>
             </div>
-        </section>
-        <section class="log">
+        </div>
+        <div class="log">
             <a href="d3_firstlog.html" class="firstlog1" alt="지표 1-1">
                 <span class ="text">종합 상태</span>
                 <span class ="grade">
@@ -111,6 +106,11 @@
                     <script src="./js/thirdlog.js"> </script>
                 </div>
             </a>
-        </section>
+        </div>
+        <div id="alarm-list">
+            <div id="side">
+                알람 리스트 작성 <!--알람 리스트 작성-->
+            </div>
+        </div>
     </body>
 </html>
