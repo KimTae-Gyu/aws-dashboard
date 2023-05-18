@@ -2,6 +2,7 @@
 *{
     box-sizing: border-box;
 }
+
 html{
     background-color: var(--light-gray);
 }
@@ -206,72 +207,35 @@ section{
     */
 }
 
-/*섹션1 - 요약(오버뷰)*/
-.overview{
-    padding : auto;
-    display : flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border : solid 2px;
-    border-color : var(--gray);
-    background-color : var(--gray)
-}
-
-#now-state{
-    border : solid;
-    border-color : var(--white);
-    margin : 5px;
-    background-color: var(--white);
-    min-width: 500px;
-}
-
-#alarm-num{
-    border : solid;
-    border-color : var(--white);
-    margin : 5px;
-    background-color: var(--white);
-    min-width: 500px;
-}
-
 /*섹션2 - 로그(오버뷰2) */
 
 .log{
-    display : grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    /*grid-template-rows: 1fr 1fr;*/
-    grid-gap: 5px;
-    grid-template-areas: "firstlog1 firstlog2 secondlog thirdlog";
+    display : flex;
+    flex-wrap: wrap;
+    flex-direction: column;
     border : solid 2px;
     border-color : var(--gray);
     background-color: var(--gray);
-    /*grid-template-areas:
-        "firstlog1 firstlog2"
-        "secondlog thirdlog";*/
+    padding : 10px;
 }
-.firstlog1, .firstlog2, .secondlog, .thirdlog {
+.firstlog, .secondlog {
     margin : 5px;
     border : solid;
     border-color: var(--white);
     background-color: var(--white);
     min-width : 250px;
 }
-.firstlog1{
-    grid-area: firstlog1;
-}
-.firstlog2{
-    grid-area: firstlog2;
+.firstlog{
+    grid-area: firstlog;
 }
 .secondlog{
     grid-area: secondlog;
 }
-.thirdlog{
-    grid-area: thirdlog;
-}
 /*사이드*/
-#alarm-list{
+/*#alarm-list{
     grid-area : side;
     border : solid 2px;
     border-color : var(--gray);
     background-color: var(--gray);
-}
+}*/
 

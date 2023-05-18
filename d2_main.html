@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<!--<script src="https://cdn.tailwindcss.com"></script>-->
+<script src="d2_main.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
 <html lang="ko">
     <head>
         <meta charset="UTF-8">
@@ -34,9 +35,9 @@
             <ul id="main">
                 <div class="index">Main</div> <!--볼드 처리-->
                 <li> <a class="mainlog" href="d2_main.html" target="_self">메인 로그</a></li> <!--볼드 처리-->
-                <li> <a href="d3_det_1.html" class="det-1">세부 사항1</a> </li>
-                <li> <a href="d3_det_2.html" class="det-2">세부 사항2</a> </li>
-                <li> <a href="d3_det_3.html" class="det-3">세부 사항3</a> </li>
+                <li> <a href="d3_firstlog.html" class="det-1">세부 사항1</a> </li>
+                <li> <a href="d3_secondlog.html" class="det-2">세부 사항2</a> </li>
+                <li> <a href="d3_thirdlog.html" class="det-3">세부 사항3</a> </li>
                 <!--<li><a class="livelog" href="livelog.html" target="_self">실시간 로그</a></li>-->
             </ul>
             <ul id="aws-log">
@@ -58,59 +59,20 @@
         </nav>
         
         <script src="menu.js"></script>
-
+    <!--임시 데이터 적용 중 / 클릭하면 비안전 예시도 볼 수 있도록 제공할 것-->    
 <section>
-        <div class="overview">
-            <div id="now-state">
-                <span class="text">현재 상태</span>
-                <span class="important">
-                    <script src="./js/firstlog.js"> </script>
-                </span>
-            </div>
-            <div id="alarm-num">
-                <span class="text">주요 알람</span>
-                <span class="important">
-                    <script src="./js/alarm.js"> </script>
-                </span>
-            </div>
-        </div>
         <div class="log">
-            <a href="d3_firstlog.html" class="firstlog1" alt="지표 1-1">
-                <span class ="text">종합 상태</span>
-                <span class ="grade">
-                    <script src="./js/firstlog.js"> </script>
-                </span>
-                <span class ="text">전일 대비</span>
-                <span class ="compare">
-                    <script src="./js/firstlog.js"> </script>
-                </span>
-            </a>
-            <a href="d3_firstlog.html" class="firstlog2" alt="지표 1-2">
-                <span class ="text">보완 항목</span>
-                <span class ="comp-list">
-                    <script src="./js/firstlog.js"> </script>
-                </span>
+            <a href="d3_firstlog.html" class="firstlog" alt="지표 1">
+                <canvas id="firstlog" style="width:45%"></canvas>
             </a>
             <a href="d3_secondlog.html" class="secondlog" alt="지표 2">
-                <span class="text">차단 개수</span>
-                <span class="grade">
-                    <script src="./js/secondlog.js"> </script>
-                </span>
-                <span class ="text">전일 대비</span>
-                <span class ="compare">
-                    <script src="./js/secondlog.js"> </script>
-                </span>
-            </a>
-            <a href="d3_thirdlog.html" class="thirdlog" alt="지표 3">
-                <div use-ruleset>차단에 사용된 룰셋 작성
-                    <script src="./js/thirdlog.js"> </script>
-                </div>
+                <canvas id="secondlog" style="width:45%"></canvas>
             </a>
         </div>
-        <div id="alarm-list">
+        <!--<div id="alarm-list">
             <div id="side">
-                알람 리스트 작성 <!--알람 리스트 작성-->
+                알람 리스트 작성 
             </div>
-        </div>
+        </div>-->
     </body>
 </html>
