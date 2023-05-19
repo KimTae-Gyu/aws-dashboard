@@ -94,17 +94,17 @@ header{
 /*네비게이션 바*/
 nav{
     grid-area : menubar;
-    display : grid;
-    grid-gap: 5px;
-    grid-template-columns: 3rem 1fr;
+    display : flex;
+    flex-direction: column;
+    /* grid-gap: 5px;
     grid-template-rows: 3rem 1fr 0.8fr 0.5fr 0.5fr 0.5fr;
     grid-template-areas :
-        "menuname menuname"
-        "mainlog mainlog"
-        "awslog awslog"
-        "control control"
-        "export export"
-        "address address";
+        "menuname"
+        "mainlog"
+        "awslog"
+        "control"
+        "export"
+        "address";*/
     left : 0;
     border : solid 2px;
     background-color: var(--gray);
@@ -120,7 +120,6 @@ li{
     padding-left : 10px;
     border-left : 5px solid var(--black);
     margin-bottom : 15px;
-    align-self: center;
 }
 
 li:hover{
@@ -133,12 +132,11 @@ li:hover{
 }
 
 /*메뉴 아이콘 및 정보*/
-#expand-menu{
+/*#expand-menu{
     background-color : var(--white);
     grid-area : menuicon;
-    align-self: center;
+    align-self: left;
 }
-/*
  .menuicon{
     margin : 5px;
     width : 45px;
@@ -150,6 +148,7 @@ li:hover{
     border-color : var(--black);
     padding-left : 5px;
     padding-bottom : 5px;
+    /*margin-right: auto;*/
 }
 
 #main .index{
@@ -162,14 +161,14 @@ li:hover{
 }
 
 label{
-    grid-area: menuname;
+    /*grid-area: menuname;*/
     padding-top : 5px;
     margin-left : 10px;
-    align-self: center;
     font-weight: 900;
 }
 
 /*메뉴 항목*/
+/*
 #main{
     grid-area : mainlog;
 }
@@ -191,16 +190,16 @@ label{
     font-size: 15px;
     font-style: italic;
     grid-area: address;
-}
+}*/
 /* 전체 섹션 */
 section{
     grid-area : section;
-    display : flex;
-    flex-wrap: wrap;
     gap : 5px;
-    flex-direction: column;
-    overflow : scroll;
+    
     margin-right : 10px;
+    width : 100%;
+    max-height: 900px;
+    overflow : auto;
 /*    
     border : solid 2px;
     border-color : var(--gray);
@@ -209,27 +208,45 @@ section{
 
 /*섹션2 - 로그(오버뷰2) */
 
-.log{
+.circle-log{
     display : flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: row;
     border : solid 2px;
     border-color : var(--gray);
     background-color: var(--gray);
     padding : 10px;
+    justify-content: center;
+    
 }
-.firstlog, .secondlog {
+.firstlog, .secondlog{
     margin : 5px;
+    padding : 5px;
     border : solid;
     border-color: var(--white);
     background-color: var(--white);
-    min-width : 250px;
+    min-width : 750px;
 }
-.firstlog{
-    grid-area: firstlog;
+
+.map-log{
+    border : solid 2px;
+    border-color : var(--gray);
+    background-color: var(--gray);
+    padding : 10px;
+    justify-content: center;
 }
-.secondlog{
-    grid-area: secondlog;
+
+.thirdlog {
+    margin : 5px;
+    padding : 5px;
+    border : solid;
+    border-color: var(--white);
+    background-color: var(--white);
+    min-height: 400px;
+}
+
+#map{
+    min-height: 400px;
 }
 /*사이드*/
 /*#alarm-list{

@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<script src="d2_main.js" defer></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
 <html lang="ko">
     <head>
         <meta charset="UTF-8">
@@ -8,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="d2_main.css">
         <link rel="stylesheet" href="web_font.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.css" integrity="sha512-mD70nAW2ThLsWH0zif8JPbfraZ8hbCtjQ+5RU1m4+ztZq6/MymyZeB55pWsi4YAX+73yvcaJyk61mzfYMvtm9w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="d2_main.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"> </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.3/leaflet.js" integrity="sha512-Dqm3h1Y4qiHUjbhxTuBGQsza0Tfppn53SHlu/uj1f+RT+xfShfe7r6czRf5r2NmllO2aKx+tYJgoxboOkn1Scg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <title>Lookey Dashboard</title>
     </head>
     <body>
@@ -57,11 +59,14 @@
             </ul>
             <p class="address"> 관리자 : 02-000-0000 </p>
         </nav>
-        
-        <script src="menu.js"></script>
     <!--임시 데이터 적용 중 / 클릭하면 비안전 예시도 볼 수 있도록 제공할 것-->    
-<section>
-        <div class="log">
+    <section>
+        <div class="map-log">
+            <div class="thirdlog">
+                <div id="map" style="width: 100%;"> </div>
+            </div>
+        </div>
+        <div class="circle-log">
             <a href="d3_firstlog.html" class="firstlog" alt="지표 1">
                 <canvas id="firstlog" style="width:45%"></canvas>
             </a>
@@ -69,10 +74,11 @@
                 <canvas id="secondlog" style="width:45%"></canvas>
             </a>
         </div>
-        <!--<div id="alarm-list">
-            <div id="side">
-                알람 리스트 작성 
-            </div>
-        </div>-->
+    </section>
+    <!--<div id="alarm-list">
+        <div id="side">
+            알람 리스트 작성 
+        </div>
+    </div>-->
     </body>
 </html>
