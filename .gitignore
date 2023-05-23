@@ -1,2 +1,5 @@
-0node_modules/
-0test/
+node_modules/
+.aws-sam/
+hello-world/*
+events/*
+dashboard-html-sam/*

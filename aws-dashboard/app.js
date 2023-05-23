@@ -48,7 +48,7 @@ passport.use(new LocalStrategy({
 }));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'));
+    res.sendFile(path.join(__dirname, 'd1_login.html'));
 });
 
 app.post('/login', passport.authenticate('local', {
@@ -57,7 +57,7 @@ app.post('/login', passport.authenticate('local', {
 }));
 
 app.get('/login', (req, res) => {
-    res.sendFile(path.join(__dirname, 'login.html'));
+    res.sendFile(path.join(__dirname, 'd1_login.html'));
 });
 
 //추가
