@@ -1,5 +1,5 @@
 node_modules/
 .aws-sam/
-hello-world/*
-events/*
-dashboard-html-sam/*
+hello-world/
+events/
+dashboard-html-sam/
