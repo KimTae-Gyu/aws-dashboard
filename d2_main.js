@@ -54,7 +54,23 @@ const secondlog = new Chart("secondlog",{
     }
 );
 
-var hanRiverPos = [37.5118, 126.9745];
-var map = L.map('map').setView(hanRiverPos, 2);
+//var hanRiverPos = [37.5118, 126.9745];
+//var map = L.map('map').setView(hanRiverPos, 13);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+//L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
+
+var map = L.map('map');
+
+// 맵이 표시될 HTML 요소 지정
+map.setView([37, -122], 12); // 초기 중심 좌표와 줌 레벨 설정
+
+// 맵에 타일 레이어 추가
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+  maxZoom: 18,
+}).addTo(map);
+var latitude=37;
+var longitude=-122;
+// IP 주소를 위도와 경도로 변환하여 지도에 마커로 표시하는 함수
+var marker = L.marker([latitude, longitude]).addTo(map);
+map.setView([latitude, longitude], 12);
